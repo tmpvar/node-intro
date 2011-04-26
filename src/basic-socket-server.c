@@ -51,10 +51,13 @@ int main(int argc, char *argv[])
 
     This particular server will wait until it recieves 255 bytes of data
   */
-  read(client_socket,buffer,255);
+  printf("Reading Data:\n");
+  fflush(stdout);
 
-  // Print the data that we received
-  printf("-----\n%s\n",buffer);
+  while (read(client_socket,buffer,255)) {
+    printf("waiting...\n");
+    printf("%s", buffer);
+  }
 
   /*
     Step 6: respond to the client
