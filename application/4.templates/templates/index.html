@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>TODOs</h1>
+
+    <ul>
+      <% for (var slug in self) { %>
+        <li>
+          <a href="/<%= slug %>"><%= self[slug].name %></a>
+          <form action="/<%= slug %>" method="post">
+            <input type="hidden" name="_method" value="delete" />
+            <input type="submit" value="Delete">
+          </form>
+        </li>
+      <% } %>
+    </ul>
+
+    <div>
+      <strong>Add A TODO</strong>
+      <form action='/' method='post'>
+        <label for="name">Name:</label>
+        <input type="text" name="name" />
+        <input type="submit" />
+      </form>
+    </div>
+  </body>
+</html>

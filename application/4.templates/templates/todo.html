@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Viewing <%= self.name %></h1>
+    <form action="/<%= self.slug %>" method="post">
+      <input type="hidden" name="_method" value="put" />
+      <label for="name">Name:</label>
+      <input type="text" name="name" value="<%= self.name %>" />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
